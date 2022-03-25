@@ -12,9 +12,9 @@
     }
 }
 
-#img-bg{
+#bg-img{
 
-    background: url("https://i.imgur.com/A12xKVi.jpg");
+    background: url("https://i.imgur.com/pAjqEa5.jpg");
 
     min-height: 658px;
 
@@ -24,7 +24,7 @@
 
 }
 
-.bg-red-dark{
+.bg-blue-dark{
 
     background: linear-gradient(135deg, #052329 0%, #04353e 100%);
     background-size: 300% 300%;
