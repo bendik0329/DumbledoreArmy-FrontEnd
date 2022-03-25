@@ -1,0 +1,33 @@
+@keyframes changeBackgroundColor {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100%;
+    }
+
+    100% {
+        background-position: 50% 0%;
+    }
+}
+
+#bg-img{
+
+    background: url("https://i.imgur.com/pAjqEa5.jpg");
+
+    min-height: 658px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.bg-blue-dark{
+
+    background: linear-gradient(135deg, #052329 0%, #04353e 100%);
+    background-size: 300% 300%;
+    animation: changeBackgroundColor 15s ease infinite;
+
+}

@@ -1,0 +1,17 @@
+.font-size-16{
+
+    font-size: 16pt;
+
+}
+
+a{
+
+    cursor: pointer;
+
+}
+
+.bg-dark{
+
+    background: linear-gradient(90deg, #3d0000 0%, #1f0000 100%)
+
+}
