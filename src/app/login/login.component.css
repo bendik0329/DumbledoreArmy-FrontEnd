@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
+
+*{
+
+    font-family: 'Eczar', serif;
+    font-weight: 400;
+
+}
+
 @keyframes changeBackgroundColor {
     0% {
         background-position: 0% 50%;
@@ -10,6 +20,20 @@
     100% {
         background-position: 50% 0%;
     }
+}
+
+h1{
+
+    font-family: 'Merienda', cursive;
+    font-weight: 900;
+
+}
+
+a{
+
+    font-weight: 700;
+    font-style: italic;
+
 }
 
 #img-bg{
@@ -26,7 +50,7 @@
 
 .bg-red-dark{
 
-    background: linear-gradient(135deg, #052329 0%, #04353e 100%);
+    background: linear-gradient(135deg, #3c949f, #052d41, #62a6ab);
     background-size: 300% 300%;
     animation: changeBackgroundColor 15s ease infinite;
 
