@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
+
 .font-size-16{
 
+    font-family: 'Eczar', serif;
     font-size: 16pt;
+    font-weight: 400;
 
 }
 
@@ -12,6 +16,6 @@ a{
 
 .bg-dark{
 
-    background: linear-gradient(90deg, #3d0000 0%, #1f0000 100%)
+    background: linear-gradient(142deg, rgba(8,8,8,1) 0%, rgba(0,0,0,1) 100%);
 
 }
