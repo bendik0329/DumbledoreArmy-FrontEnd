@@ -71,7 +71,7 @@
   transform: translateY(-50%);
   z-index: 4;
   animation: dd1 10s infinite, dd12 10s infinite;
-  animation-delay: 4s, 14s;
+  animation-delay: 2s, 14s;
 
   margin-top: 5%;
 
