@@ -1,42 +1,41 @@
-<div class="container-fluid bg-blue-dark">
+<div class="container-fluid">
 
   <div class="row d-flex align-items-center">
 
-    <div class="col-md-6" id="img-bg"></div>
-    <div class="col-md-6">
-      <div class="row d-flex justify-content-center">
+    <div class="col-md-12" id="img-bg">
 
-        <div class="col-md-6">
-
-          <h1 class="text-center mb-3 text-white">Entrar</h1>
-
-          <div class="form-group">
-
-            <label for="user" class="text-white">Usuário</label>
-            <input class="form-control" type="text" name="user" id="user" placeholder="Seu usuário">
+      <div class="container mr-auto">
+        <div class="row full-height justify-content-center">
+          <div class="col-12 text-center align-self-center py-5">
+            <div class="section pb-5 pt-5 pt-sm-2 text-center">
+              <div class="card-3d-wrap mr-auto">
+                <div class="card-3d-wrapper">
+                  <div class="card-front">
+                    <div class="center-wrap">
+                      <div class="section text-center">
+                        <h4 class="mb-4 pb-3">Login</h4>
+                        <div class="form-group">
+                          <input [(ngModel)]="userLogin.email" type="email" name="email" class="form-style" placeholder="Email" id="email"
+                            autocomplete="off">
+                          <i class="input-icon uil uil-at"></i>
+                        </div>
+                        <div class="form-group mt-2">
+                          <input [(ngModel)]="userLogin.password" type="password" name="password" class="form-style" placeholder="Password" id="password"
+                            autocomplete="off">
+                          <i class="input-icon uil uil-lock-alt"></i>
+                        </div>
+                        <a (click)="login()" class="btn mt-4">Login</a>
+                        <p class="mb-0 mt-4 text-center link">Não tem uma conta?</p>
+                        <a routerLink="/register" class="btn mt-4">Cadastre-se</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="password" class="text-white">Senha</label>
-            <input class="form-control" type="password" name="password" id="password" placeholder="Sua senha">
-
-          </div>
-
-
-          <div class="d-flex justify-content-center">
-
-            <button type="submit" class="btn btn-success">Entrar</button>
-
-          </div>
-
-          <hr class="mt-5 mb-5">
-
-          <p class="text-center text-white"> Não tem uma conta? <a routerLink="/register" class="text-weight-bold">Cadastre-se</a></p>
-
         </div>
-
       </div>
     </div>
-
   </div>
-
 </div>
