@@ -1,4 +1,5 @@
-import { StartComponent } from './start/start.component';
+import { ThemeComponent } from './theme/theme.component';
+import { FeedComponent } from './feed/feed.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path:'home', component: HomeComponent},
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
-  {path:'start', component:StartComponent}
+  {path:'feed', component:FeedComponent},
+  {path:'theme', component:ThemeComponent}
 
 ];
 

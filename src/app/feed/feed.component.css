@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
+
+*{
+
+  font-family: 'Eczar', serif;
+  font-weight: 400;
+
+}
+
+h1{
+
+  font-family: 'Merienda', cursive;
+  font-weight: 900;
+
+}
+
+#postagens {
+
+  background: linear-gradient(180deg, #080019 0%, #0b0c0e 100%);
+  background-size: 300% 300%;
+  animation: changeBackgroundColor 15s ease infinite;
+
+
+}
+
+.bg-feed {
+
+  background-image: url("https://i.imgur.com/Iu24t8F.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  background-position: center;
+  display: flex;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  overflow: auto;
+  padding: 3em;
+  position: relative;
+
+}
+
+.modal-body {
+  background: #000000;
+}
+
+.close {
+  color: #fff;
+}
+
+.close:hover {
+  color: #fff;
+}
+
+.intro-2 {
+  font-size: 13px;
+}
+
+.mt-100 {
+
+  margin-top: 100px;
+
+}
+
+.container {
+  margin-top: 250px;
+}
+
+.demo {
+  background-color: rgb(168, 200, 245);
+}
+
+.pagination-outer {
+  text-align: center;
+}
+
+.pagination {
+  background-color: rgb(46, 0, 68);
+  border-radius: 25px !important;
+  overflow: hidden;
+  border: none !important
+}
+
+a:focus,
+a:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.fa {
+  font-size: 11px;
+  vertical-align: middle !important;
+  color: black;
+}
+
+.pagination{
+  color: #fff !important;
+}
+
+.pagination {
+  color: #ffffff;
+  background-color: transparent;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 17px 25px;
+  border: none;
+  transition: all 0.3s ease 0s;
+}
+
+.fa-home {
+  transform: scale(1.4, 1.4);
+}
+
+.page-link {
+  border: none;
+}
+
+.page-link:hover {
+  background-color: transparent;
+}
+
+.pagination:after {
+  content: '';
+  background-color: #231939 !important;
+  height: 100%;
+  width: 100%;
+  transform: scaleY(0);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: all 0.3s
+}
+
+a.page-link:after,
+a.page-link:hover:after,
+a.page-link:hover:after {
+  transform: scaleY(1);
+  border-radius: 25px !important;
+}
+
+@keyframes changeBackgroundColor {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: 50% 0%;
+  }
+}
+
+@media (max-width: 767px) {
+  a.page-link {
+    padding: 11px 8px !important;
+  }
+
+  .fa {
+    font-size: 9px !important;
+  }
+
+  a {
+    font-size: 12px !important;
+  }
+
+  .page-item+.page-item {
+    padding-left: 0 !important;
+  }
+}

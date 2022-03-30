@@ -1,21 +1,97 @@
-@import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
+.body {
 
-.font-size-16{
-
-    font-family: 'Eczar', serif;
-    font-size: 16pt;
-    font-weight: 400;
+    background: #000000;
 
 }
 
-a{
-
-    cursor: pointer;
-
+.header2 {
+  font-family: "Montserrat", sans-serif;
+  color: #8d97ad;
+  font-weight: 300
 }
 
-.bg-dark{
+.header2.bg-success-gradiant {
+    background: rgba( 9, 9, 38, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 15.5px );
+    -webkit-backdrop-filter: blur( 15.5px );
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 150%;
+}
 
-    background: linear-gradient(142deg, rgba(8,8,8,1) 0%, rgba(0,0,0,1) 100%);
+.header2 .font-12 {
+  font-size: 12px
+}
 
+.header2 .dropdown-item {
+  padding: 8px 1rem;
+  color: #8d97ad
+}
+
+.header2 .h2-nav .navbar-nav .nav-item .nav-link {
+  padding: 12px 0px;
+  color: #ffffff;
+  font-weight: 400
+}
+
+.header2 .h2-nav .navbar-nav .nav-item .nav-link:hover {
+  color: #263238
+}
+
+.header2 .h2-nav .navbar-nav .nav-item {
+  margin: 0 20px
+}
+
+@media (min-width: 1024px) {
+  .header2 .navbar-nav>.dropdown .dropdown-menu {
+    min-width: 210px;
+    margin-top: 0px
+  }
+}
+
+@media (min-width: 1024px) {
+  .header2 .dropdown-submenu:hover>.dropdown-menu {
+    display: block
+  }
+}
+
+.header2 .dropdown-toggle::after {
+  display: none
+}
+
+@media (min-width: 1024px) {
+  .header2 .hover-dropdown .navbar-nav>.dropdown:hover>.dropdown-menu {
+    display: block;
+    margin-top: 0px
+  }
+}
+
+.header2 .btn-dark {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #343a40
+}
+
+.header2 .btn-dark:hover {
+  color: #fff;
+  background-color: #23272b;
+  border-color: #1d2124
+}
+
+.header2 .h2-nav .navbar-nav .nav-item .btn {
+  opacity: 0.5
+}
+
+.header2 .h2-nav .navbar-nav .nav-item .btn:hover {
+  opacity: 1
+}
+
+.header2 .dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 0;
+  border-radius: 0.25rem;
+  display: none
 }
