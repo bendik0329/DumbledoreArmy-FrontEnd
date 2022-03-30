@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -20,6 +21,20 @@ export class AuthService {
   Register(user:UserModel): Observable<UserModel>{
 
     return this.html.post<UserModel>('http://localhost:8080/user/register', user);
+
+  }
+
+  Logged(){
+
+    let ok = false;
+
+    if(environment.token != ''){
+
+      ok = true;
+
+    }
+
+    return ok;
 
   }
 

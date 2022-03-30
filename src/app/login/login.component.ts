@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
       console.log(environment.photo)
       console.log(environment.id)
 
-      this.router.navigate(["/start"]);
+      this.router.navigate(["/feed"]);
 
     }, error => {if(error.status == 500 || error.status == 401){
 
