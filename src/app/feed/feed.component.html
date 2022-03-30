@@ -1,23 +1,23 @@
 <div class="container-fluid">
 
-  <div class="row bg-secondary d-flex align-items-center">
+  <div class="row bg-feed d-flex align-items-center">
     <div class="col-md-6">
 
       <div class="row d-flex justify-content-center">
 
-        <div class="col-md-6">
+        <div class="col-md-6 text-white">
 
           <h1 class="fs-54">Seja bem Vinde!</h1>
 
-          <h5 class="fs-18">Expresse aqui seus pensamentos e opiniões sobre o mundo de Harry Potter!</h5>
+          <h5 class="fs-18">Expresse seus pensamentos e opiniões sobre o mundo de Harry Potter!</h5>
 
         </div>
 
       </div>
 
-      <div class="row d-flex justify-content-center mt-3 mb-5">
+      <div class="row mt-3 mb-5">
 
-        <div class="col-md-6">
+        <div class="col-md-12 d-flex justify-content-center">
 
           <Button type="button" class="btn btn-light mr-2" data-toggle="modal" data-target="#novaPostagem">Nova
             Postagem</Button>
@@ -28,74 +28,90 @@
       </div>
 
     </div>
-
-    <div class="col-md-6 d-flex justify-content-center">
-
-      <img src="https://i.imgur.com/dtwFwDh.png" alt="" width="500px" height="500px">
-
-    </div>
   </div>
 
 </div>
 
-<div class="container mb-5 mt-5" id="postagens">
+<div class="container-fluid pb-5" id="postagens">
 
-  <nav>
-    <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
-      <a class="nav-link active text-secondary font-weight-bold" id="nav-home-tab" data-toggle="tab"
-        href="#todasAsPostagens" role="tab" aria-controls="nav-todasAsPostagens" aria-selected="true">Todas as
-        postagens</a>
-      <a class="nav-link text-secondary font-weight-bold" id="nav-profile-tab" data-toggle="tab" href="#minhasPostagens"
-        role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">Minhas postagens</a>
-      <a class="nav-link text-secondary font-weight-bold" id="nav-contact-tab" data-toggle="tab" href="#postagemPorTema"
-        role="tab" aria-controls="nav-postagemPorTema" aria-selected="false">Postagens por Tema</a>
+  <div class="row">
+    <div class="col-md-7">
+      <nav>
+        <div class="nav nav-tabs d-flex justify-content-center pt-5" id="nav-tab" role="tablist">
+          <a class="page-link page-item pagination shadow-lg" id="nav-home-tab" data-toggle="tab"
+            href="#todasAsPostagens" role="tab" aria-controls="nav-todasAsPostagens" aria-selected="true">Todas as
+            postagens </a>
+          <a class="page-link page-item pagination shadow-lg" id="nav-home-tab" data-toggle="tab"
+            href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">Minhas
+            postagens</a>
+          <a class="page-link page-item pagination shadow-lg" id="nav-home-tab" data-toggle="tab"
+            href="#postagemPorTema" role="tab" aria-controls="nav-postagemPorTema" aria-selected="false">Postagens por
+            Tema</a>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active text-white" id="todasAsPostagens" role="tabpanel"
+          aria-labelledby="nav-todasAsPostagens-tab">Todas Postagens
+        </div>
+        <div class="tab-pane fade text-white" id="minhasPostagens" role="tabpanel"
+          aria-labelledby="nav-minhasPostagens-tab">Minhas
+          Postagens
+        </div>
+        <div class="tab-pane fade text-white" id="postagemPorTema" role="tabpanel"
+          aria-labelledby="nav-postagemPorTema-tab">Postagens
+          por tema
+        </div>
+      </div>
     </div>
-  </nav>
-  <div class="tab-content" id="nav-tabContent">
-    <div class="tab-pane fade show active" id="todasAsPostagens" role="tabpanel"
-      aria-labelledby="nav-todasAsPostagens-tab">Todas as Postagens</div>
-    <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">Minhas
-      Postagens</div>
-    <div class="tab-pane fade" id="postagemPorTema" role="tabpanel" aria-labelledby="nav-postagemPorTema-tab">Postagens
-      por tema</div>
+    <div class="col-md-5 ml-auto">
+      <p><img src="https://i.imgur.com/nAreL52.png" alt=""></p>
+    </div>
   </div>
-
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="novaPostagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+
+<div class="modal fade" id="novaPostagem" data-backdrop="static" data-keyboard="false" tabindex="-1"
+  aria-labelledby="novaPostagem" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Nova Postagem</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
       <div class="modal-body">
-        <div class="form-group">
+        <div class="text-right"> <i class="fa fa-close close" data-dismiss="modal"></i> </div>
+        <div class="row">
+          <div class="col-md-6 staticBackdrop">
+            <div class="text-center mt-100"><img src="https://i.imgur.com/XiKvR8t.png" width="300px" height="300px">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="text-white mt-5">
+              <h1 class="mb-0">Nova Postagem</h1>
+              <div class="form-group">
 
-          <label for="title"> Titulo </label>
-          <input type="text" class="form-control" id="title" placeholder="Digite o título">
+                <label for="title"> Titulo </label>
+                <input type="text" class="form-control" id="title" placeholder="Digite o título">
 
+              </div>
+              <div class="form-group">
+
+                <label for="text"> Texto </label>
+                <textarea type="text" class="form-control" id="titulo" row="3"></textarea>
+
+              </div>
+              <div class="form-group">
+
+                <label for="text"> Escolha um tema ou <a routerLink="/theme" data-dismiss="modal">cadastre um novo</a>:
+                </label>
+                <select name="theme" id="theme" class="form-control">
+                  <option value="">Tema</option>
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-success">Publicar</button>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-
-          <label for="text"> Texto </label>
-          <textarea type="text" class="form-control" id="titulo" row="3"></textarea>
-
-        </div>
-        <div class="form-group">
-
-          <label for="text"> Escolha um tema ou <a href="">cadastre um novo</a>: </label>
-          <select name="theme" id="theme" class="form-control">
-            <option value="">Tema</option>
-          </select>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success">Publicar</button>
       </div>
     </div>
   </div>

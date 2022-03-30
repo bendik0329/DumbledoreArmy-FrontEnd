@@ -13,6 +13,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { FeedComponent } from './feed/feed.component';
+import { ThemeComponent } from './theme/theme.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FeedComponent } from './feed/feed.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    FeedComponent
+    FeedComponent,
+    ThemeComponent
   ],
   imports: [
     BrowserModule,

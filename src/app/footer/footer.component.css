@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
 
+.footer{
+
+    background: #000000;
+
+}
+
 ul.social-network{
 
     list-style: none;
@@ -37,7 +43,7 @@ ul.social-network li{
 
 .fa-github:hover{
 
-    color: #000000;
+    color: #888888;
 
 }
 
@@ -53,6 +59,13 @@ ul.social-network li{
 
 .bg-black{
 
-    background: linear-gradient(142deg, rgba(8,8,8,1) 0%, rgba(0,0,0,1) 100%);
+        background: rgba( 9, 9, 38, 0.15 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 15.5px );
+        -webkit-backdrop-filter: blur( 15.5px );
+        background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        background-size: 150%;
 
 }
