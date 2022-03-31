@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
+
+*{
+
+  font-family: 'Eczar', serif;
+  font-weight: 400;
+
+}
+
+h1{
+
+  font-family: 'Merienda', cursive;
+  font-weight: 900;
+
+}
 
 html{
 
