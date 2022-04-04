@@ -19,13 +19,13 @@
 
           <div class="form-group">
 
-            <input type="text" class="form-control" id="description" placeholder="Digite a descrição do tema">
+            <input [(ngModel)] = "theme.description" type="text" class="form-control" id="description" placeholder="Digite a descrição do tema">
 
           </div>
 
           <div class="d-flex justify-content-center">
 
-            <a class="btn mt-1 ml-3">Cadastrar</a>
+            <a class="btn mt-1 ml-3" (click)="registerTheme()">Cadastrar</a>
 
           </div>
 
@@ -61,55 +61,15 @@
                 <tr>
                   <th>#</th>
                   <th>Tema</th>
-                  <th class="text-center">Modificações</th>
+                  <th class="text-right">Modificações</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Livros</td>
+                <tr *ngFor="let theme of listTheme">
+                  <td>{{theme.id}}</td>
+                  <td>{{theme.description}}</td>
                   <td class="text-center">
-                    <ul class="action-list">
-                      <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                      <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Filmes</td>
-                  <td class="text-center">
-                    <ul class="action-list">
-                      <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                      <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Teorias</td>
-                  <td class="text-center">
-                    <ul class="action-list">
-                      <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                      <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Curiosidades</td>
-                  <td class="text-center">
-                    <ul class="action-list">
-                      <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                      <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>Novidades</td>
-                  <td class="text-center">
-                    <ul class="action-list">
+                    <ul class="action-list d-flex justify-content-end">
                       <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
                       <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
                     </ul>
