@@ -19,7 +19,8 @@
 
           <div class="form-group">
 
-            <input [(ngModel)] = "theme.description" type="text" class="form-control" id="description" placeholder="Digite a descrição do tema">
+            <input [(ngModel)]="theme.description" type="text" class="form-control" id="description"
+              placeholder="Digite a descrição do tema">
 
           </div>
 
@@ -68,16 +69,14 @@
                 <tr *ngFor="let theme of listTheme">
                   <td>{{theme.id}}</td>
                   <td>{{theme.description}}</td>
-                  <td class="text-center">
-                    <ul class="action-list d-flex justify-content-end">
-                      <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                      <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
-                    </ul>
+                  <td class="d-flex justify-content-end">
+                    <a data-tip="edit" [routerLink]="['/theme-edit', theme.id]"><i class="fa fa-edit"></i></a>
+                    <a data-tip="delete" [routerLink]="['/theme-delete', theme.id]"><i class="fa fa-trash"></i></a>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
+        </div>
       </div>
     </div>
-  </div>

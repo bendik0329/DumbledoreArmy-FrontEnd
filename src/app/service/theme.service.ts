@@ -33,4 +33,22 @@ export class ThemeService {
 
   }
 
+  GetByIdTheme(id: number): Observable<ThemeModel>{
+
+    return this.http.get<ThemeModel>(`http://localhost:8080/theme/${id}`, this.token);
+
+  }
+
+  putTheme(theme: ThemeModel): Observable<ThemeModel>{
+
+    return this.http.put<ThemeModel>('http://localhost:8080/theme', theme, this.token);
+
+  }
+
+  deleteTheme(id: number){
+
+    return this.http.delete(`http://localhost:8080/theme/${id}`, this.token);
+
+  }
+
 }
