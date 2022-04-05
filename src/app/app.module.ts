@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { FeedComponent } from './feed/feed.component';
 import { ThemeComponent } from './theme/theme.component';
+import { ThemeEditComponent } from './edit/theme-edit/theme-edit.component';
+import { ThemeDeleteComponent } from './delete/theme-delete/theme-delete.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ThemeComponent } from './theme/theme.component';
     RegisterComponent,
     HomeComponent,
     FeedComponent,
-    ThemeComponent
+    ThemeComponent,
+    ThemeEditComponent,
+    ThemeDeleteComponent
   ],
   imports: [
     BrowserModule,
