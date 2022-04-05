@@ -71,7 +71,7 @@
           </div>
 
         </div>
-        
+
         <div class="tab-pane fade text-white" id="minhasPostagens" role="tabpanel"
           aria-labelledby="nav-minhasPostagens-tab">
           <div class="card-columns">
@@ -83,6 +83,9 @@
                 <p class="card-text text-dark  mt-3">{{post.description}}</p>
                 <p class="card-text"><small class="text-muted">{{post.date | date: 'dd/MM/yyyy'}} às
                     {{post.date | date: 'HH:mm'}}</small></p>
+
+                  <a class="text-info mr-3" href="" [routerLink]="['/post-edit', post.id]">Editar</a>
+                  <a class="text-danger" href="" [routerLink]="['/post-delete', post.id]">Apagar</a>
 
               </div>
             </div>
