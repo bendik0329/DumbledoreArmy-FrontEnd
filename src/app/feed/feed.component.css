@@ -80,7 +80,7 @@ a:active {
   color: black;
 }
 
-.pagination{
+.pagination {
   color: #fff !important;
 }
 
@@ -124,6 +124,96 @@ a.page-link:hover:after,
 a.page-link:hover:after {
   transform: scaleY(1);
   border-radius: 25px !important;
+}
+
+.blockquote-shadow{
+
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(15.5px);
+  -webkit-backdrop-filter: blur(15.5px);
+
+}
+
+.bg-blockquote {
+
+  background: transparent;
+
+}
+
+.blockquote-custom {
+  position: relative;
+  font-size: 1.1rem;
+}
+
+.blockquote-custom-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -25px;
+  left: 50px;
+}
+
+.team-boxed .people {
+  padding: 50px 0;
+}
+
+.team-boxed .item {
+  text-align: center;
+}
+
+.team-boxed .item .box {
+  text-align: center;
+  padding: 30px;
+  background-color: transparent;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(15.5px);
+  -webkit-backdrop-filter: blur(15.5px);
+  margin-bottom: 30px;
+}
+
+.team-boxed .item .name {
+  font-weight: bold;
+  margin-top: 28px;
+  margin-bottom: 8px;
+  color: inherit;
+}
+
+.team-boxed .item .title {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #d0d0d0;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+.team-boxed .item .description {
+  font-size: 15px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.team-boxed .item img {
+  max-width: 160px;
+}
+
+.team-boxed .social {
+  font-size: 18px;
+  color: #a2a8ae;
+}
+
+.team-boxed .social a {
+  color: inherit;
+  margin: 0 10px;
+  display: inline-block;
+  opacity: 0.7;
+}
+
+.team-boxed .social a:hover {
+  opacity: 1;
 }
 
 @keyframes changeBackgroundColor {

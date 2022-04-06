@@ -15,6 +15,7 @@ export class UserEditComponent implements OnInit {
   user: UserModel = new UserModel();
   confirmPassword: string;
   typeUsers: string;
+  photo = environment.photo;
 
   constructor(
 
@@ -63,7 +64,7 @@ export class UserEditComponent implements OnInit {
 
     }else{
 
-      this.authService.Register(this.user).subscribe((resp:UserModel) =>{
+      this.authService.Update(this.user).subscribe((resp:UserModel) =>{
 
         this.user = resp;
         alert("Usuário cadastrado com sucesso! Faça login novamente!");

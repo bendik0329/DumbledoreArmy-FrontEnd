@@ -97,6 +97,7 @@ export class FeedComponent implements OnInit {
     this.user.id = this.idUser;
     this.postModel.user = this.user;
 
+
     this.postService.post(this.postModel).subscribe((resp: PostModel) => {
 
       this.postModel = resp;
