@@ -1,3 +1,6 @@
+import { UserEditComponent } from './edit/user-edit/user-edit.component';
+import { PostDeleteComponent } from './delete/post-delete/post-delete.component';
+import { PostEditComponent } from './edit/post-edit/post-edit.component';
 import { ThemeDeleteComponent } from './delete/theme-delete/theme-delete.component';
 import { ThemeComponent } from './theme/theme.component';
 import { FeedComponent } from './feed/feed.component';
@@ -18,7 +21,10 @@ const routes: Routes = [
   {path:'feed', component:FeedComponent},
   {path:'theme', component:ThemeComponent},
   {path: 'theme-edit/:id',component:ThemeEditComponent},
-  {path: 'theme-delete/:id', component:ThemeDeleteComponent}
+  {path: 'theme-delete/:id', component:ThemeDeleteComponent},
+  {path: 'post-edit/:id', component:PostEditComponent},
+  {path: 'post-delete/:id', component: PostDeleteComponent},
+  {path: 'user-edit/:id', component: UserEditComponent}
 
 ];
 

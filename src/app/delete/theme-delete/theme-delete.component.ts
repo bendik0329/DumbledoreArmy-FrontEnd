@@ -51,7 +51,7 @@ export class ThemeDeleteComponent implements OnInit {
     this.themeService.deleteTheme(this.idTheme).subscribe(()=>{
 
       alert("Tema apagado com sucesso!");
-      this.router.navigate(['theme']);
+      this.router.navigate(['/theme']);
 
     });
 

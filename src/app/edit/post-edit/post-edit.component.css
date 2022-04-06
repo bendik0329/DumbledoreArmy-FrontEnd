@@ -1,18 +1,4 @@
-@keyframes changeBackgroundColor {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100%;
-  }
-
-  100% {
-    background-position: 50% 0%;
-  }
-}
-
-.bg-theme-edit {
+.bg-post-edit {
 
   background: linear-gradient(135deg, #080019 0%, #0b0c0e 100%);
   background-size: 300% 300%;

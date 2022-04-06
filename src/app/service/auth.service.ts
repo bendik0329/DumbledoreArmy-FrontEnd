@@ -1,5 +1,5 @@
 import { environment } from './../../environments/environment.prod';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserLogin } from '../model/UserLogin';
@@ -11,6 +11,12 @@ import { UserModel } from '../model/UserModel';
 export class AuthService {
 
   constructor(private html:HttpClient) { }
+
+  token = {
+
+    headers: new HttpHeaders().set('Authorization', environment.token)
+
+  }
 
   Login(userLogin: UserLogin): Observable<UserLogin>{
 
@@ -24,6 +30,17 @@ export class AuthService {
 
   }
 
+  Update(user:UserModel): Observable<UserModel>{
+
+    return this.html.put<UserModel>('http://localhost:8080/user/update', user);
+
+  }
+
+  getByIdUser(id: number): Observable<UserModel>{
+
+    return this.html.get<UserModel>(`http://localhost:8080/user/${id}`);
+
+  }
   Logged(){
 
     let ok = false;

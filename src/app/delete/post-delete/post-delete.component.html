@@ -1,0 +1,47 @@
+<div class="container-fluid pb-5 pt-5 bg-post-delete">
+
+  <div class="row">
+
+    <div class="col-md-12">
+
+      <h1 class="text-center">Apagar Postagem</h1>
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col md-12">
+
+      <h4 class="text-center">Você tem certeza que deseja apagar essa postagem?</h4>
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-12">
+
+      <blockquote
+        class="blockquote blockquote-custom bg-blockquote p-5 blockquote-shadow rounded mb-5 text-center text-white">
+        <div class="blockquote-custom-icon bg-info shadow-sm"><img src="{{postModel.user.photo}}" alt="User Photo"
+            width="50px" height="50px" class="img-fluid rounded-circle">
+        </div>
+        <h5 class="card-title m-0">{{postModel.title}}</h5>
+        <p><small class="text-muted"> Tema: {{postModel.theme.description}} </small></p>
+        <p class="mb-0 mt-2 font-italic">{{postModel.description}}</p>
+        <footer class="blockquote-footer pt-4 mt-4 border-top"><small
+            class="text-muted">{{postModel.date | date: 'dd/MM/yyyy'}} às
+            {{postModel.date | date: 'HH:mm'}}</small>
+          <p class="buttons"><a class="text-info mr-3" routerLink="/feed">Não</a>
+            <a class="text-danger" (click)="delete()">Sim</a></p>
+        </footer>
+      </blockquote>
+
+    </div>
+
+  </div>
+
+</div>

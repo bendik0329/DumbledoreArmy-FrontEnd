@@ -10,7 +10,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-  user: UserModel = new UserModel;
+  user: UserModel = new UserModel();
   confirmPassword: string;
   typeUsers: string;
 
@@ -59,3 +59,5 @@ export class RegisterComponent implements OnInit {
   }
 
 }
+
+

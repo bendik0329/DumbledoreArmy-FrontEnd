@@ -16,6 +16,9 @@ import { FeedComponent } from './feed/feed.component';
 import { ThemeComponent } from './theme/theme.component';
 import { ThemeEditComponent } from './edit/theme-edit/theme-edit.component';
 import { ThemeDeleteComponent } from './delete/theme-delete/theme-delete.component';
+import { PostEditComponent } from './edit/post-edit/post-edit.component';
+import { PostDeleteComponent } from './delete/post-delete/post-delete.component';
+import { UserEditComponent } from './edit/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { ThemeDeleteComponent } from './delete/theme-delete/theme-delete.compone
     FeedComponent,
     ThemeComponent,
     ThemeEditComponent,
-    ThemeDeleteComponent
+    ThemeDeleteComponent,
+    PostEditComponent,
+    PostDeleteComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,

@@ -34,85 +34,133 @@
 
 <div class="container-fluid pb-5" id="postagens">
 
-  <div class="row">
-    <div class="col-md-7">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-8 text-center">
       <nav>
         <div class="nav nav-tabs d-flex justify-content-center pt-5" id="nav-tab" role="tablist">
           <a class="page-link page-item pagination shadow-lg" id="nav-home-tab" data-toggle="tab"
             href="#todasAsPostagens" role="tab" aria-controls="nav-todasAsPostagens" aria-selected="true">Todas as
             postagens </a>
-          <a class="page-link page-item pagination shadow-lg" id="nav-home-tab" data-toggle="tab"
-            href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">Minhas
+          <a (click)="this.findByIdUser()" class="page-link page-item pagination shadow-lg" id="nav-home-tab"
+            data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens"
+            aria-selected="false">Minhas
             postagens</a>
           <a class="page-link page-item pagination shadow-lg" id="nav-home-tab" data-toggle="tab"
             href="#postagemPorTema" role="tab" aria-controls="nav-postagemPorTema" aria-selected="false">Postagens por
             Tema</a>
         </div>
       </nav>
-      <div class="tab-content" id="nav-tabContent">
+      <div class="tab-content mt-5" id="nav-tabContent">
         <div class="tab-pane fade show active text-white" id="todasAsPostagens" role="tabpanel"
-          aria-labelledby="nav-todasAsPostagens-tab">Todas Postagens
+          aria-labelledby="nav-todasAsPostagens-tab">
+
+          <blockquote class="blockquote blockquote-custom bg-blockquote p-5 blockquote-shadow rounded mb-5"
+            *ngFor="let post of listPost">
+            <div class="blockquote-custom-icon bg-info shadow-sm"><img src="{{post.user.photo}}" alt="User Photo"
+                width="50px" height="50px" class="img-fluid rounded-circle">
+            </div>
+            <h5 class="card-title m-0">{{post.title}}</h5>
+            <small class="text-muted"> Tema: {{post.theme.description}} </small>
+            <p class="mb-0 mt-2 font-italic">{{post.description}}</p>
+            <footer class="blockquote-footer pt-4 mt-4 border-top">
+              <p>By: {{post.user.name}}</p><small class="text-muted">{{post.date | date: 'dd/MM/yyyy'}} às
+                {{post.date | date: 'HH:mm'}}</small>
+            </footer>
+          </blockquote>
         </div>
+
+
         <div class="tab-pane fade text-white" id="minhasPostagens" role="tabpanel"
-          aria-labelledby="nav-minhasPostagens-tab">Minhas
-          Postagens
+          aria-labelledby="nav-minhasPostagens-tab">
+
+          <blockquote class="blockquote blockquote-custom bg-blockquote p-5 blockquote-shadow rounded mb-5"
+            *ngFor="let post of user.post">
+            <div class="blockquote-custom-icon bg-info shadow-sm"><img src="{{user.photo}}" alt="User Photo"
+                width="50px" height="50px" class="img-fluid rounded-circle">
+            </div>
+            <h5 class="card-title m-0">{{post.title}}</h5>
+            <small class="text-muted"> Tema: {{post.theme.description}} </small>
+            <p class="mb-0 mt-2 font-italic">{{post.description}}</p>
+            <footer class="blockquote-footer pt-4 mt-4 border-top"><small
+                class="text-muted">{{post.date | date: 'dd/MM/yyyy'}} às
+                {{post.date | date: 'HH:mm'}}</small>
+              <p><a class="text-info mr-3" href="" [routerLink]="['/post-edit', post.id]">Editar</a>
+                <a class="text-danger" href="" [routerLink]="['/post-delete', post.id]">Apagar</a></p>
+            </footer>
+          </blockquote>
         </div>
+
         <div class="tab-pane fade text-white" id="postagemPorTema" role="tabpanel"
-          aria-labelledby="nav-postagemPorTema-tab">Postagens
-          por tema
-        </div>
-      </div>
-    </div>
-    <div class="col-md-5 ml-auto">
-      <p><img src="https://i.imgur.com/nAreL52.png" alt=""></p>
-    </div>
-  </div>
-</div>
+          aria-labelledby="nav-postagemPorTema-tab">
 
-<!-- Modal -->
-
-<div class="modal fade" id="novaPostagem" data-backdrop="static" data-keyboard="false" tabindex="-1"
-  aria-labelledby="novaPostagem" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="text-right"> <i class="fa fa-close close" data-dismiss="modal"></i> </div>
-        <div class="row">
-          <div class="col-md-6 staticBackdrop">
-            <div class="text-center mt-100"><img src="https://i.imgur.com/XiKvR8t.png" width="300px" height="300px">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="text-white mt-5">
-              <h1 class="mb-0">Nova Postagem</h1>
-              <div class="form-group">
-
-                <label for="title"> Titulo </label>
-                <input type="text" class="form-control" id="title" placeholder="Digite o título">
-
+          <div class="team-boxed">
+            <div class="row people" *ngFor="let theme of listTheme">
+              <div class="col-md-6 col-lg-4 item" *ngFor="let item of theme.post">
+                <div class="box"><img class="rounded-circle" src="{{item.user.photo}}">
+                  <h3 class="name">{{item.user.name}}</h3>
+                  <p class="title">{{item.title}}</p>
+                  <p class="description">{{item.description}} </p>
+                  <div class="social">
+                    <p class="card-text"><small class="text-muted">{{item.date | date: 'dd/MM/yyyy'}} às
+                        {{item.date | date: 'HH:mm'}}</small></p>
+                  </div>
+                </div>
               </div>
-              <div class="form-group">
-
-                <label for="text"> Texto </label>
-                <textarea type="text" class="form-control" id="titulo" row="3"></textarea>
-
-              </div>
-              <div class="form-group">
-
-                <label for="text"> Escolha um tema ou <a routerLink="/theme" data-dismiss="modal">cadastre um novo</a>:
-                </label>
-                <select name="theme" id="theme" class="form-control">
-                  <option value="">Tema</option>
-                </select>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-success">Publicar</button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
+
+  <!-- Modal -->
+
+  <div class="modal fade" id="novaPostagem" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="novaPostagem" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-right"> <i class="fa fa-close close" data-dismiss="modal"></i> </div>
+          <div class="row">
+            <div class="col-md-6 staticBackdrop">
+              <div class="text-center mt-100"><img src="https://i.imgur.com/XiKvR8t.png" width="300px" height="300px">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="text-white mt-5">
+                <h1 class="mb-0">Nova Postagem</h1>
+                <div class="form-group">
+
+                  <label for="title"> Titulo </label>
+                  <input [(ngModel)]="postModel.title" type="text" class="form-control" id="title"
+                    placeholder="Digite o título">
+
+                </div>
+                <div class="form-group">
+
+                  <label for="text"> Texto </label>
+                  <textarea [(ngModel)]="postModel.description" type="text" class="form-control" id="titulo"
+                    row="3"></textarea>
+
+                </div>
+                <div class="form-group">
+
+                  <label for="text"> Escolha um tema ou <a routerLink="/theme" data-dismiss="modal">cadastre um
+                      novo</a>:
+                  </label>
+                  <select name="theme" id="theme" class="form-control" [(ngModel)]="idTheme" (change)="findByIdTheme()">
+                    <option *ngFor="let theme of listTheme" value="{{theme.id}}">{{theme.description}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" (click)="post()" data-dismiss="modal">Publicar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
