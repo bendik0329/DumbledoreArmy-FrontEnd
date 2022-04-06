@@ -29,6 +29,9 @@ export class FeedComponent implements OnInit {
   key = "data";
   reverse = true;
 
+  titlePost: string;
+  themePost: string;
+
   constructor(
 
     private router: Router,
@@ -40,7 +43,7 @@ export class FeedComponent implements OnInit {
 
   ngOnInit() {
 
-    window.scroll(0,0);
+    window.scroll(0, 0);
 
     if (environment.token == '') {
 
@@ -94,25 +97,58 @@ export class FeedComponent implements OnInit {
 
   }
 
-  post() {
+  findByTitlePost() {
 
-    this.theme.id = this.idTheme;
-    this.postModel.theme = this.theme;
-
-    this.user.id = this.idUser;
-    this.postModel.user = this.user;
-
-
-    this.postService.post(this.postModel).subscribe((resp: PostModel) => {
-
-      this.postModel = resp;
-      this.alerts.showAlertSuccess("Postagem realizada com sucesso!");
-      this.postModel = new PostModel();
+    if (this.titlePost == '') {
 
       this.getAllPost();
 
-    })
+    } else {
+      this.postService.getByTitlePost(this.titlePost).subscribe((resp: PostModel[]) => {
+
+        this.listPost = resp;
+
+      });
+    }
+  }
+
+  findByThemePost(){
+
+    if(this.themePost == ''){
+
+      this.getAllTheme()
+
+    }else{
+
+      this.themeService.getByNameTheme(this.themePost).subscribe((resp: ThemeModel[]) =>{
+
+        this.listTheme = resp;
+
+      })
+
+    }
 
   }
+
+    post() {
+
+      this.theme.id = this.idTheme;
+      this.postModel.theme = this.theme;
+
+      this.user.id = this.idUser;
+      this.postModel.user = this.user;
+
+
+      this.postService.post(this.postModel).subscribe((resp: PostModel) => {
+
+        this.postModel = resp;
+        this.alerts.showAlertSuccess("Postagem realizada com sucesso!");
+        this.postModel = new PostModel();
+
+        this.getAllPost();
+
+      })
+
+    }
 
 }

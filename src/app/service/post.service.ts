@@ -33,6 +33,12 @@ export class PostService {
 
   }
 
+  getByTitlePost(title: string): Observable<PostModel[]>{
+
+    return this.http.get<PostModel[]>(`http://localhost:8080/post/title/${title}`, this.token)
+
+  }
+
   post(post: PostModel): Observable<PostModel> {
 
     return this.http.post<PostModel>("http://localhost:8080/post", post, this.token);
