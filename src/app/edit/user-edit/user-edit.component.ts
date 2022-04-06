@@ -1,3 +1,4 @@
+import { AlertsService } from './../../service/alerts.service';
 import { AuthService } from './../../service/auth.service';
 import { UserModel } from './../../model/UserModel';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -21,7 +22,8 @@ export class UserEditComponent implements OnInit {
 
     private authService: AuthService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private alerts: AlertsService
 
   ) { }
 
@@ -31,7 +33,7 @@ export class UserEditComponent implements OnInit {
 
     if (environment.token == '') {
 
-      alert("Sua sessão expirou, faça o login novamente!");
+      this.alerts.showAlertInfo("Sua sessão expirou, faça o login novamente!");
       this.router.navigate(['/home']);
 
     }
@@ -60,14 +62,14 @@ export class UserEditComponent implements OnInit {
 
     if(this.user.password != this.confirmPassword){
 
-      alert("As senhas precisam ser iguais!");
+      this.alerts.showAlertDanger("As senhas precisam ser iguais!");
 
     }else{
 
       this.authService.Update(this.user).subscribe((resp:UserModel) =>{
 
         this.user = resp;
-        alert("Usuário cadastrado com sucesso! Faça login novamente!");
+        this.alerts.showAlertSuccess("Usuário cadastrado com sucesso! Faça login novamente!");
         environment.token = '';
         environment.name = '';
         environment.photo = '';

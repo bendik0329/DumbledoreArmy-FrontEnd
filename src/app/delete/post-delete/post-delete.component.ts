@@ -1,3 +1,4 @@
+import { AlertsService } from './../../service/alerts.service';
 import { PostService } from './../../service/post.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PostModel } from './../../model/PostModel';
@@ -18,7 +19,8 @@ export class PostDeleteComponent implements OnInit {
 
     private router: Router,
     private route: ActivatedRoute,
-    private postService: PostService
+    private postService: PostService,
+    private alerts: AlertsService
 
   ) { }
 
@@ -27,7 +29,7 @@ export class PostDeleteComponent implements OnInit {
     
     if (environment.token == '') {
 
-      alert("Sua sessão expirou, faça o login novamente!");
+      this.alerts.showAlertInfo("Sua sessão expirou, faça o login novamente!");
       this.router.navigate(['/home'])
 
     }
@@ -51,7 +53,7 @@ export class PostDeleteComponent implements OnInit {
 
     this.postService.deletePost(this.idPost).subscribe(()=>{
 
-      alert("Postagem apagada com Sucesso!");
+      this.alerts.showAlertSuccess("Postagem apagada com Sucesso!");
       this.router.navigate(['/feed']);
 
     });

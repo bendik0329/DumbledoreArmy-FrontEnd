@@ -1,3 +1,4 @@
+import { AlertsService } from './../../service/alerts.service';
 import { ThemeService } from './../../service/theme.service';
 import { ThemeModel } from './../../model/ThemeModel';
 import { environment } from './../../../environments/environment.prod';
@@ -23,7 +24,8 @@ export class PostEditComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private postService: PostService,
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private alerts: AlertsService
 
   ) { }
 
@@ -32,7 +34,7 @@ export class PostEditComponent implements OnInit {
     
     if (environment.token == '') {
 
-      alert("Sua sessão expirou, faça o login novamente!");
+      this.alerts.showAlertInfo("Sua sessão expirou, faça o login novamente!");
       this.router.navigate(['/home'])
 
     }
@@ -82,7 +84,7 @@ export class PostEditComponent implements OnInit {
     this.postService.put(this.postModel).subscribe((resp: PostModel) =>{
 
       this.postModel = resp;
-      alert("Postagem atualizada com sucesso!");
+      this.alerts.showAlertSuccess("Postagem atualizada com sucesso!");
       this.router.navigate(['/feed']);
 
     })
