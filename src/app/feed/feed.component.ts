@@ -7,6 +7,7 @@ import { environment } from './../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PostService } from '../service/post.service';
+import { AlertsService } from '../service/alerts.service';
 
 @Component({
   selector: 'app-feed',
@@ -25,12 +26,16 @@ export class FeedComponent implements OnInit {
   user: UserModel = new UserModel();
   idUser = environment.id;
 
+  key = "data";
+  reverse = true;
+
   constructor(
 
     private router: Router,
     private postService: PostService,
     private themeService: ThemeService,
-    private authService: AuthService
+    private authService: AuthService,
+    private alerts: AlertsService
   ) { }
 
   ngOnInit() {
@@ -101,7 +106,7 @@ export class FeedComponent implements OnInit {
     this.postService.post(this.postModel).subscribe((resp: PostModel) => {
 
       this.postModel = resp;
-      alert("Postagem realizada com sucesso!");
+      this.alerts.showAlertSuccess("Postagem realizada com sucesso!");
       this.postModel = new PostModel();
 
       this.getAllPost();

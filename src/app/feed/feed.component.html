@@ -55,7 +55,7 @@
           aria-labelledby="nav-todasAsPostagens-tab">
 
           <blockquote class="blockquote blockquote-custom bg-blockquote p-5 blockquote-shadow rounded mb-5"
-            *ngFor="let post of listPost">
+            *ngFor="let post of listPost | orderBy : key : reverse">
             <div class="blockquote-custom-icon bg-info shadow-sm"><img src="{{post.user.photo}}" alt="User Photo"
                 width="50px" height="50px" class="img-fluid rounded-circle">
             </div>
@@ -74,7 +74,7 @@
           aria-labelledby="nav-minhasPostagens-tab">
 
           <blockquote class="blockquote blockquote-custom bg-blockquote p-5 blockquote-shadow rounded mb-5"
-            *ngFor="let post of user.post">
+            *ngFor="let post of user.post | orderBy : key : reverse">
             <div class="blockquote-custom-icon bg-info shadow-sm"><img src="{{user.photo}}" alt="User Photo"
                 width="50px" height="50px" class="img-fluid rounded-circle">
             </div>
@@ -95,7 +95,7 @@
 
           <div class="team-boxed">
             <div class="row people" *ngFor="let theme of listTheme">
-              <div class="col-md-6 col-lg-4 item" *ngFor="let item of theme.post">
+              <div class="col-md-6 col-lg-4 item" *ngFor="let item of theme.post | orderBy : key : reverse">
                 <div class="box"><img class="rounded-circle" src="{{item.user.photo}}">
                   <h3 class="name">{{item.user.name}}</h3>
                   <p class="title">{{item.title}}</p>
