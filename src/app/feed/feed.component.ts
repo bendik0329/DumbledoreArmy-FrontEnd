@@ -47,7 +47,7 @@ export class FeedComponent implements OnInit {
 
     if (environment.token == '') {
 
-      alert("Sua sessão expirou, faça o login novamente!");
+      this.alerts.showAlertInfo("Sua sessão expirou, faça o login novamente!");
       this.router.navigate(['/home'])
 
     }
