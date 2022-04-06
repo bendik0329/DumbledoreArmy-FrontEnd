@@ -35,7 +35,6 @@ export class AuthService {
     return this.html.get<UserModel>(`http://localhost:8080/user/${id}`);
 
   }
-
   Logged(){
 
     let ok = false;

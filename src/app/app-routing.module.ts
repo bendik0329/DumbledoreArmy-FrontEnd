@@ -1,3 +1,4 @@
+import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { PostDeleteComponent } from './delete/post-delete/post-delete.component';
 import { PostEditComponent } from './edit/post-edit/post-edit.component';
 import { ThemeDeleteComponent } from './delete/theme-delete/theme-delete.component';
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: 'theme-edit/:id',component:ThemeEditComponent},
   {path: 'theme-delete/:id', component:ThemeDeleteComponent},
   {path: 'post-edit/:id', component:PostEditComponent},
-  {path: 'post-delete/:id', component: PostDeleteComponent}
+  {path: 'post-delete/:id', component: PostDeleteComponent},
+  {path: 'user-edit/:id', component: UserEditComponent}
 
 ];
 

@@ -1,0 +1,64 @@
+<div class="container-fluid">
+
+    <div class="row d-flex align-items-center">
+  
+      <div class="col-md-12" id="img-bg">
+  
+        <div class="container mr-auto">
+          <div class="row full-height justify-content-center">
+            <div class="col-12 text-center align-self-center py-5">
+              <div class="section pb-1 pt-1 pt-sm-2 text-center mb-10">
+                <div class="card-3d-wrap ml-auto">
+                  <div class="card-3d-wrapper">
+                    <div class="card-front">
+                      <div class="center-wrap">
+                        <div class="section text-center">
+                          <div class="form-group">
+                            <input [(ngModel)]="user.name" type="name" name="name" class="form-style" placeholder="Nome" id="name"
+                              autocomplete="off">
+                            <i class="input-icon uil uil-at"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input [(ngModel)]="user.email" type="email" name="email" class="form-style" placeholder="Email" id="email"
+                              autocomplete="off">
+                            <i class="input-icon uil uil-at"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input [(ngModel)]="user.photo" type="photo" name="photo" class="form-style" placeholder="Link da sua foto" id="photo"
+                              autocomplete="off">
+                            <i class="input-icon uil uil-at"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input (input)="confirmePassword($event)" type="password" name="password" class="form-style" placeholder="Senha" id="password"
+                              autocomplete="off">
+                            <i class="input-icon uil uil-lock-alt"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input [(ngModel)]="user.password" type="password" name="password" class="form-style" placeholder="Confirme sua senha" id="password"
+                              autocomplete="off">
+                            <i class="input-icon uil uil-lock-alt"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <select class="form-control form-style" (change)="typeUser($event)">
+                              <option value="">Selecione sua casa</option>
+                              <option value="normal">Grifinória</option>
+                              <option value="normal">Sonserina</option>
+                              <option value="normal">Lufa-Lufa</option>
+                              <option value="normal">Corvinal</option>
+                            </select>
+                            <i class="input-icon uil uil-lock-alt"></i>
+                          </div>
+                          <a routerLink="/feed" class="btn-cancel mt-4">Cancelar</a>
+                          <a (click) = "updateUser()" class="btn mt-1 ml-3">Cadastre-se</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
