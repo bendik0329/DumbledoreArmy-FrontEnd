@@ -26,6 +26,9 @@ export class FeedComponent implements OnInit {
   user: UserModel = new UserModel();
   idUser = environment.id;
 
+  key = "data";
+  reverse = true;
+
   constructor(
 
     private router: Router,
