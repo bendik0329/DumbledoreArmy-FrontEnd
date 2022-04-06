@@ -32,6 +32,13 @@ export class ThemeComponent implements OnInit {
 
     }
 
+    if(environment.type != 'adm'){
+
+      alert("Você precisa ser adm para acessar essa rota!")
+      this.router.navigate(['/feed'])
+
+    }
+
     this.findAllTheme()
 
   }

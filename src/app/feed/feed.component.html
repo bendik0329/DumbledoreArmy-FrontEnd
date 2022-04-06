@@ -54,8 +54,23 @@
         <div class="tab-pane fade show active text-white" id="todasAsPostagens" role="tabpanel"
           aria-labelledby="nav-todasAsPostagens-tab">
 
+          <div class="row d-flex justify-content-center mt-5 mb-5">
+
+            <div class="col-md-4">
+
+              <div class="form-group">
+
+                <input [(ngModel)]="titlePost" type="text" class="form-control" id="title"
+                  placeholder="Digite um titulo de postagem para fazer sua pesquisa." (keyup)="findByTitlePost()">
+
+              </div>
+
+            </div>
+
+          </div>
+
           <blockquote class="blockquote blockquote-custom bg-blockquote p-5 blockquote-shadow rounded mb-5"
-            *ngFor="let post of listPost">
+            *ngFor="let post of listPost | orderBy : key : reverse">
             <div class="blockquote-custom-icon bg-info shadow-sm"><img src="{{post.user.photo}}" alt="User Photo"
                 width="50px" height="50px" class="img-fluid rounded-circle">
             </div>
@@ -74,7 +89,7 @@
           aria-labelledby="nav-minhasPostagens-tab">
 
           <blockquote class="blockquote blockquote-custom bg-blockquote p-5 blockquote-shadow rounded mb-5"
-            *ngFor="let post of user.post">
+            *ngFor="let post of user.post | orderBy : key : reverse">
             <div class="blockquote-custom-icon bg-info shadow-sm"><img src="{{user.photo}}" alt="User Photo"
                 width="50px" height="50px" class="img-fluid rounded-circle">
             </div>
@@ -93,16 +108,30 @@
         <div class="tab-pane fade text-white" id="postagemPorTema" role="tabpanel"
           aria-labelledby="nav-postagemPorTema-tab">
 
-          <div class="team-boxed">
-            <div class="row people" *ngFor="let theme of listTheme">
-              <div class="col-md-6 col-lg-4 item" *ngFor="let item of theme.post">
-                <div class="box"><img class="rounded-circle" src="{{item.user.photo}}">
-                  <h3 class="name">{{item.user.name}}</h3>
-                  <p class="title">{{item.title}}</p>
-                  <p class="description">{{item.description}} </p>
-                  <div class="social">
-                    <p class="card-text"><small class="text-muted">{{item.date | date: 'dd/MM/yyyy'}} às
-                        {{item.date | date: 'HH:mm'}}</small></p>
+          <div class="row d-flex justify-content-center mt-5 mb-5">
+
+            <div class="col-md-4">
+
+              <div class="form-group">
+
+                <input [(ngModel)]="themePost" type="text" class="form-control" id="theme"
+                  placeholder="Digite um tema de postagem para fazer sua pesquisa." (keyup)="findByThemePost()">
+
+              </div>
+
+            </div>
+
+            <div class="team-boxed">
+              <div class="row people" *ngFor="let theme of listTheme">
+                <div class="col-md-6 col-lg-4 item" *ngFor="let item of theme.post | orderBy : key : reverse">
+                  <div class="box"><img class="rounded-circle" src="{{item.user.photo}}">
+                    <h3 class="name">{{item.user.name}}</h3>
+                    <p class="title">{{item.title}}</p>
+                    <p class="description">{{item.description}} </p>
+                    <div class="social">
+                      <p class="card-text"><small class="text-muted">{{item.date | date: 'dd/MM/yyyy'}} às
+                          {{item.date | date: 'HH:mm'}}</small></p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -111,56 +140,56 @@
         </div>
       </div>
     </div>
-  </div>
 
 
-  <!-- Modal -->
+    <!-- Modal -->
 
-  <div class="modal fade" id="novaPostagem" data-backdrop="static" data-keyboard="false" tabindex="-1"
-    aria-labelledby="novaPostagem" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-body">
-          <div class="text-right"> <i class="fa fa-close close" data-dismiss="modal"></i> </div>
-          <div class="row">
-            <div class="col-md-6 staticBackdrop">
-              <div class="text-center mt-100"><img src="https://i.imgur.com/XiKvR8t.png" width="300px" height="300px">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="text-white mt-5">
-                <h1 class="mb-0">Nova Postagem</h1>
-                <div class="form-group">
-
-                  <label for="title"> Titulo </label>
-                  <input [(ngModel)]="postModel.title" type="text" class="form-control" id="title"
-                    placeholder="Digite o título">
-
-                </div>
-                <div class="form-group">
-
-                  <label for="text"> Texto </label>
-                  <textarea [(ngModel)]="postModel.description" type="text" class="form-control" id="titulo"
-                    row="3"></textarea>
-
-                </div>
-                <div class="form-group">
-
-                  <label for="text"> Escolha um tema ou <a routerLink="/theme" data-dismiss="modal">cadastre um
-                      novo</a>:
-                  </label>
-                  <select name="theme" id="theme" class="form-control" [(ngModel)]="idTheme" (change)="findByIdTheme()">
-                    <option *ngFor="let theme of listTheme" value="{{theme.id}}">{{theme.description}}</option>
-                  </select>
+    <div class="modal fade" id="novaPostagem" data-backdrop="static" data-keyboard="false" tabindex="-1"
+      aria-labelledby="novaPostagem" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="text-right"> <i class="fa fa-close close" data-dismiss="modal"></i> </div>
+            <div class="row">
+              <div class="col-md-6 staticBackdrop">
+                <div class="text-center mt-100"><img src="https://i.imgur.com/XiKvR8t.png" width="300px" height="300px">
                 </div>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-success" (click)="post()" data-dismiss="modal">Publicar</button>
+              <div class="col-md-6">
+                <div class="text-white mt-5">
+                  <h1 class="mb-0">Nova Postagem</h1>
+                  <div class="form-group">
+
+                    <label for="title"> Titulo </label>
+                    <input [(ngModel)]="postModel.title" type="text" class="form-control" id="title"
+                      placeholder="Digite o título">
+
+                  </div>
+                  <div class="form-group">
+
+                    <label for="text"> Texto </label>
+                    <textarea [(ngModel)]="postModel.description" type="text" class="form-control" id="titulo"
+                      row="3"></textarea>
+
+                  </div>
+                  <div class="form-group">
+
+                    <label for="text"> Escolha um tema ou <a routerLink="/theme" data-dismiss="modal">cadastre um
+                        novo</a>:
+                    </label>
+                    <select name="theme" id="theme" class="form-control" [(ngModel)]="idTheme"
+                      (change)="findByIdTheme()">
+                      <option *ngFor="let theme of listTheme" value="{{theme.id}}">{{theme.description}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-success" (click)="post()" data-dismiss="modal">Publicar</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
