@@ -126,7 +126,7 @@ a.page-link:hover:after {
   border-radius: 25px !important;
 }
 
-.blockquote-shadow{
+.blockquote-shadow {
 
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(15.5px);
@@ -214,6 +214,18 @@ a.page-link:hover:after {
 
 .team-boxed .social a:hover {
   opacity: 1;
+}
+
+.border-form {
+
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(15.5px);
+  -webkit-backdrop-filter: blur(15.5px);
+
 }
 
 @keyframes changeBackgroundColor {
