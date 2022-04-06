@@ -39,6 +39,12 @@ export class ThemeService {
 
   }
 
+  getByNameTheme(name: string): Observable<ThemeModel[]>{
+
+    return this.http.get<ThemeModel[]>(`http://localhost:8080/theme/name/${name}`, this.token);
+
+  }
+
   putTheme(theme: ThemeModel): Observable<ThemeModel>{
 
     return this.http.put<ThemeModel>('http://localhost:8080/theme', theme, this.token);
