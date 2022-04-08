@@ -13,6 +13,8 @@ export class MenuComponent implements OnInit {
   photo = environment.photo;
   id = environment.id;
 
+  logo: string;
+
   constructor(
 
     private router: Router
@@ -20,6 +22,30 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit(){
+
+    if(environment.type == "grifinoria"){
+
+      this.logo = "https://i.imgur.com/5uFQ5IY.png";
+
+    }else if(environment.type == "sonserina"){
+
+      this.logo = "https://i.imgur.com/xMnPvAV.png";
+
+    }else if(environment.type == "lufa"){
+
+      this.logo = "https://i.imgur.com/Z8SrHOg.png";
+
+    }else if(environment.type == "corvinal"){
+
+      this.logo = "https://i.imgur.com/oYTEkcG.png";
+
+    }else{
+
+      this.logo = "https://i.imgur.com/5uFQ5IY.png";
+
+    }
+
+    
   }
 
     logoff(){
@@ -31,5 +57,7 @@ export class MenuComponent implements OnInit {
     environment.id =0;
 
   }
+
+  
 
 }
