@@ -20,25 +20,25 @@ export class AuthService {
 
   Login(userLogin: UserLogin): Observable<UserLogin>{
 
-    return this.html.post<UserLogin>('http://localhost:8080/user/login', userLogin);
+    return this.html.post<UserLogin>('https://dumbledorearmy.herokuapp.com/user/login', userLogin);
 
   }
 
   Register(user:UserModel): Observable<UserModel>{
 
-    return this.html.post<UserModel>('http://localhost:8080/user/register', user);
+    return this.html.post<UserModel>('https://dumbledorearmy.herokuapp.com/user/register', user);
 
   }
 
   Update(user:UserModel): Observable<UserModel>{
 
-    return this.html.put<UserModel>('http://localhost:8080/user/update', user);
+    return this.html.put<UserModel>('https://dumbledorearmy.herokuapp.com/user/update', user);
 
   }
 
   getByIdUser(id: number): Observable<UserModel>{
 
-    return this.html.get<UserModel>(`http://localhost:8080/user/${id}`);
+    return this.html.get<UserModel>(`https://dumbledorearmy.herokuapp.com/user/${id}`);
 
   }
   Logged(){

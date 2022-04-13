@@ -23,37 +23,37 @@ export class ThemeService {
 
   postTheme(theme: ThemeModel): Observable<ThemeModel> {
 
-    return this.http.post<ThemeModel>('http://localhost:8080/theme', theme, this.token);
+    return this.http.post<ThemeModel>('https://dumbledorearmy.herokuapp.com/theme', theme, this.token);
 
   }
 
   getAllTheme(): Observable<ThemeModel[]> {
 
-    return this.http.get<ThemeModel[]>('http://localhost:8080/theme', this.token);
+    return this.http.get<ThemeModel[]>('https://dumbledorearmy.herokuapp.com/theme', this.token);
 
   }
 
   GetByIdTheme(id: number): Observable<ThemeModel>{
 
-    return this.http.get<ThemeModel>(`http://localhost:8080/theme/${id}`, this.token);
+    return this.http.get<ThemeModel>(`https://dumbledorearmy.herokuapp.com/theme/${id}`, this.token);
 
   }
 
   getByNameTheme(name: string): Observable<ThemeModel[]>{
 
-    return this.http.get<ThemeModel[]>(`http://localhost:8080/theme/name/${name}`, this.token);
+    return this.http.get<ThemeModel[]>(`https://dumbledorearmy.herokuapp.com/theme/name/${name}`, this.token);
 
   }
 
   putTheme(theme: ThemeModel): Observable<ThemeModel>{
 
-    return this.http.put<ThemeModel>('http://localhost:8080/theme', theme, this.token);
+    return this.http.put<ThemeModel>('https://dumbledorearmy.herokuapp.com/theme', theme, this.token);
 
   }
 
   deleteTheme(id: number){
 
-    return this.http.delete(`http://localhost:8080/theme/${id}`, this.token);
+    return this.http.delete(`https://dumbledorearmy.herokuapp.com/theme/${id}`, this.token);
 
   }
 

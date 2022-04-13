@@ -23,37 +23,37 @@ export class PostService {
 
   getAllPost(): Observable<PostModel[]> {
 
-    return this.http.get<PostModel[]>("http://localhost:8080/post", this.token);
+    return this.http.get<PostModel[]>("https://dumbledorearmy.herokuapp.com/post", this.token);
 
   }
 
   getByIdPost(id: number): Observable<PostModel>{
 
-    return this.http.get<PostModel>(`http://localhost:8080/post/${id}`, this.token);
+    return this.http.get<PostModel>(`https://dumbledorearmy.herokuapp.com/post/${id}`, this.token);
 
   }
 
   getByTitlePost(title: string): Observable<PostModel[]>{
 
-    return this.http.get<PostModel[]>(`http://localhost:8080/post/title/${title}`, this.token)
+    return this.http.get<PostModel[]>(`https://dumbledorearmy.herokuapp.com/post/title/${title}`, this.token)
 
   }
 
   post(post: PostModel): Observable<PostModel> {
 
-    return this.http.post<PostModel>("http://localhost:8080/post", post, this.token);
+    return this.http.post<PostModel>("https://dumbledorearmy.herokuapp.com/post", post, this.token);
 
   }
 
   put(post: PostModel): Observable<PostModel>{
 
-    return this.http.put<PostModel>('http://localhost:8080/post', post, this.token);
+    return this.http.put<PostModel>('https://dumbledorearmy.herokuapp.com/post', post, this.token);
 
   }
 
   deletePost(id: number){
 
-    return this.http.delete(`http://localhost:8080/post/${id}`, this.token);
+    return this.http.delete(`https://dumbledorearmy.herokuapp.com/post/${id}`, this.token);
 
   }
 
